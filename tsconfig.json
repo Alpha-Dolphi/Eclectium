@@ -22,6 +22,8 @@
     "src/icons/people.d.ts",
     "src/icons/stars.d.ts",
     "src/icons/star.d.ts",
-    "src/icons/flag.d.ts"
+    "src/icons/flag.d.ts",
+    "src/icons/flag.d.ts",
+   "src/icons/flag.d.ts",
   ]
 }
