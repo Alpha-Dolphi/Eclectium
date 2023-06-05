@@ -1,13 +1,26 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+* {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  /* border: 1px solid black; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  @apply min-w-[1200px];
+}
+
+.grid-position {
+  grid-template-columns: 4fr 3fr 3fr;
+}
+
+.square-time {
+  @apply border-[2px] border-solid border-[#DADADA] w-[75px] h-[75px] grid align-middle justify-center rounded-[16px] text-[#6C6A6C] py-[8px] font-[400] text-[14px];
+}
+
+.square-number {
+  @apply text-[#0B090C] text-[24px] font-[600] text-center;
 }
