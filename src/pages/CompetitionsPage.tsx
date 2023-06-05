@@ -26,7 +26,6 @@ const CompetitionsPage = () => {
   };
 
   useEffect(() => {
-    console.log("dispatch");
     dispatch(fetchCompetitions());
   }, [dispatch]);
 

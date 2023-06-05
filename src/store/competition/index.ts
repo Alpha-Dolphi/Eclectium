@@ -12,7 +12,6 @@ import { State } from "..";
 export const fetchCompetitions = createAsyncThunk(
   "competition/fetchCompetitions",
   async (_, { rejectWithValue, getState }) => {
-    // if(selectCompetitionsLoadingStatus(getState() as State))
     const { competition } = getState() as State;
     if(competition.ids.length) {
       return competition.entities;
