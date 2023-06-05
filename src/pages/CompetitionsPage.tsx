@@ -35,7 +35,7 @@ const CompetitionsPage = () => {
   const sortedCompetitions = Object.values(competitions).filter(
     (competition) => {
       if (activeCategory === 0) {
-        if (getTimeDifference(competition.registrationEndDate) < 0) {
+        if (getTimeDifference(competition.registrationEndDate) < 0 || competition.added) {
           return false;
         }
         return true;
