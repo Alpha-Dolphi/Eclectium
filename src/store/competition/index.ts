@@ -6,12 +6,18 @@ import {
 } from "@reduxjs/toolkit";
 import { Competition } from "./competitionInterfaces";
 import competitions from "./incomingCompetitionsData";
-import { selectCompetitionById } from "./selectors";
+import { selectCompetitionById, selectCompetitionsLoadingStatus } from "./selectors";
 import { State } from "..";
 
 export const fetchCompetitions = createAsyncThunk(
   "competition/fetchCompetitions",
-  async (_, { rejectWithValue }) => {
+  async (_, { rejectWithValue, getState }) => {
+    // if(selectCompetitionsLoadingStatus(getState() as State))
+    const { competition } = getState() as State;
+    if(competition.ids.length) {
+      return competition.entities;
+    }
+
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000));
       return competitions;
